@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Stores\Schemas;
 
+use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
 
 class StoreForm
@@ -10,7 +11,12 @@ class StoreForm
     {
         return $schema
             ->components([
-                //
+                TextInput::make('name')
+                    ->placeholder('Store Name')
+                    ->required(),
+                TextInput::make('address')
+                    ->placeholder('Store Address')
+                    ->required(),
             ]);
     }
 }
